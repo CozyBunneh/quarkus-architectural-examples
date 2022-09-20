@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+    id 'io.quarkus' apply false
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
+}
+allprojects {
+    group 'com.test'
+    version '1.0.0-SNAPSHOT'
+}
+
+subprojects {
+    apply plugin: 'java'
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    compileJava {
+        options.encoding = 'UTF-8'
+        options.compilerArgs << '-parameters'
+    }
+
+    compileTestJava {
+        options.encoding = 'UTF-8'
+    }
+
+    java {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    test {
+        systemProperty "java.util.logging.manager", "org.jboss.logmanager.LogManager"
+    }
+}

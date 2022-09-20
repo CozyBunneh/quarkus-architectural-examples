@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cqrs-multi-module-deployment
+  labels:
+    app: cqrs-multi-module
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cqrs-mutli-module
+  template:
+    metadata:
+      labels:
+        app: cqrs-multi-module
+    spec:
+      containers:
+      - name: cqrs-multi-module
+        image: quarkus/cqrs-multi-module:latest
+        ports:
+        - containerPort: 8080

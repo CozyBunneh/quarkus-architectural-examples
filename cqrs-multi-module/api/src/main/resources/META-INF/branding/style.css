@@ -1,0 +1,38 @@
+html{
+    box-sizing: border-box;
+    overflow: -moz-scrollbars-vertical;
+    overflow-y: scroll;
+}
+
+*,
+*:before,
+*:after
+{
+    box-sizing: inherit;
+}
+
+body{
+    margin:0;
+    background: white;
+}
+
+.swagger-ui .topbar {
+    background-color: white;
+    border-bottom: 1px solid #F3F2F2;
+}
+
+.swagger-ui img {
+  max-width: max-content;
+  height: 0.7em;
+}
+
+.swagger-ui .info a {
+  color: #005D92;
+}
+
+#footer {
+    font-family:sans-serif;
+    color: #005D92;
+    font-size:70%;
+    text-align: center;
+}
